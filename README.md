@@ -41,4 +41,4 @@ To read more about MVP Architecture you may refer to these links:
 <img src="https://user-images.githubusercontent.com/13542406/59402919-13202380-8dd3-11e9-912c-495ff47f3ec9.png" width="200" >
 
 ### To test the the whole flow you can download the apk using this link from bitrise: 
-
+https://app.bitrise.io/artifact/16693614/p/e0a2b991d691a4bc6c43bb1c0792a642
