@@ -12,5 +12,10 @@ data class CurrentWeatherEntity(
     val updatedTime: String,
     val weather: String,
     val temperature: String,
-    val wind: String
+    val wind: String,
+    val feelsLikeTemperature: String,
+    val conditionImageUrl: String,
+    val conditionCode: Int,
+    val visibility: String,
+    val precipitation: String
 ) : Parcelable

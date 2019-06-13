@@ -5,4 +5,14 @@
     <string name="message_error_unknown">Something went wrong</string>
     <string name="message_connection_error">Your connection seems lost</string>
     <string name="message_connect_internet">Connect to the internet</string>
+    <string name="text_visibility">Visibility: %s</string>
+    <string name="text_precipitation">Precipitation: %s</string>
+    <string name="text_wind">Wind: %s</string>
+    <string name="text_feels_like">Feels like %s</string>
+
+    <string-array name="cities_array">
+        <item>Sydney</item>
+        <item>Melbourne</item>
+        <item>Wollongong</item>
+    </string-array>
 </resources>

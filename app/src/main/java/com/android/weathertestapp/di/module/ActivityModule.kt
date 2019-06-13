@@ -3,6 +3,8 @@ package com.android.weathertestapp.di.module
 import android.app.Activity
 import android.content.Context
 import com.android.weathertestapp.di.qualifiers.ActivityContext
+import com.android.weathertestapp.ui.currentweather.CurrentWeatherContracts
+import com.android.weathertestapp.ui.currentweather.CurrentWeatherPresenter
 import com.android.weathertestapp.ui.splash.SplashContracts
 import com.android.weathertestapp.ui.splash.SplashPresenter
 import dagger.Module
@@ -25,5 +27,10 @@ class ActivityModule(private val activity: Activity) {
     @Provides
     fun provideSplashPresenter(splashPresenter: SplashPresenter): SplashContracts.Presenter<SplashContracts.View> {
         return splashPresenter
+    }
+
+    @Provides
+    fun provideCurrentWeatherPresenter(currentWeatherPresenter: CurrentWeatherPresenter): CurrentWeatherContracts.Presenter<CurrentWeatherContracts.View> {
+        return currentWeatherPresenter
     }
 }

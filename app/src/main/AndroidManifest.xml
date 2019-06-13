@@ -13,8 +13,6 @@
                  android:supportsRtl="true"
                  android:theme="@style/AppTheme"
                  tools:ignore="GoogleAppIndexingWarning">
-
-
         <activity
                 android:name=".ui.splash.SplashActivity"
                 android:theme="@style/AppTheme.NoActionBar">
@@ -24,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui.currentweather.CurrentWeatherActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
 
     </application>
 </manifest>

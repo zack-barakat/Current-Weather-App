@@ -4,6 +4,10 @@ import android.os.Bundle
 import com.android.weathertestapp.R
 import com.android.weathertestapp.ui.base.BaseMvpActivity
 import com.android.weathertestapp.ui.base.BasePresenter
+import com.android.weathertestapp.ui.currentweather.CurrentWeatherActivity
+import org.jetbrains.anko.clearTask
+import org.jetbrains.anko.clearTop
+import org.jetbrains.anko.intentFor
 import javax.inject.Inject
 
 class SplashActivity : BaseMvpActivity(), SplashContracts.View {
@@ -23,7 +27,7 @@ class SplashActivity : BaseMvpActivity(), SplashContracts.View {
 
     }
 
-    protected fun setupLayout() {
+    private fun setupLayout() {
 
     }
 
@@ -32,6 +36,6 @@ class SplashActivity : BaseMvpActivity(), SplashContracts.View {
     }
 
     override fun showMainScreen() {
-
+        startActivity(intentFor<CurrentWeatherActivity>().clearTask().clearTop())
     }
 }

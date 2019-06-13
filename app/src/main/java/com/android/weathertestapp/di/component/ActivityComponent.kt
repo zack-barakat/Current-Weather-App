@@ -4,6 +4,7 @@ package com.android.weathertestapp.di.component
 import com.android.weathertestapp.di.module.ActivityModule
 import com.android.weathertestapp.di.scopes.ActivityScope
 import com.android.weathertestapp.ui.base.BaseMvpActivity
+import com.android.weathertestapp.ui.currentweather.CurrentWeatherActivity
 import com.android.weathertestapp.ui.splash.SplashActivity
 import dagger.Component
 
@@ -16,4 +17,5 @@ interface ActivityComponent {
 
     fun inject(activity: SplashActivity)
 
+    fun inject(activity: CurrentWeatherActivity)
 }

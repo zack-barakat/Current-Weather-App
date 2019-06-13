@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.currentweather.CurrentWeatherActivity">
+
+    <Spinner
+            android:id="@+id/spinnerCities"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/cities_array"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintHorizontal_bias="0.99"
+            android:layout_margin="@dimen/common_ui_padding"/>
+
+    <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_ui_padding_extra_small"
+            android:layout_marginStart="@dimen/common_ui_padding"
+            android:layout_marginEnd="@dimen/common_ui_padding"
+            android:textAppearance="@style/Title1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.08"
+            tools:text="Sydney"/>
+
+    <TextView
+            android:id="@+id/tvWeatherTime"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/common_ui_padding"
+            android:layout_marginBottom="@dimen/common_ui_padding"
+            android:textAppearance="@style/Title2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity"
+            tools:text="Thursday 11:00 AM"/>
+
+    <ImageView
+            android:id="@+id/ivConditionIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/common_ui_padding_small"
+            android:layout_marginEnd="@dimen/common_ui_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.593"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.33"
+            app:layout_constraintWidth_percent="0.45"
+            tools:src="@drawable/ic_weather_sunny"
+            tools:tint="#f9a920"/>
+
+
+    <TextView
+            android:id="@+id/tvConditionDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Title2Thin"
+            app:layout_constraintEnd_toEndOf="@+id/ivConditionIcon"
+            app:layout_constraintHorizontal_bias="0.423"
+            app:layout_constraintTop_toBottomOf="@+id/ivConditionIcon"
+            app:layout_constraintStart_toStartOf="@+id/ivConditionIcon"
+            tools:text="Partially Rain"/>
+
+    <TextView
+            android:id="@+id/tvTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_ui_padding_small"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="@dimen/common_ui_padding_large"
+            android:textAppearance="@style/HeadlineThin"
+            app:layout_constraintTop_toTopOf="@+id/ivConditionIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/ivConditionIcon"
+            tools:text="25.0°C"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivConditionIcon"/>
+
+    <TextView
+            android:id="@+id/tvFeelsLikeTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/Title3"
+            app:layout_constraintEnd_toEndOf="@+id/tvTemperature"
+            app:layout_constraintStart_toStartOf="@+id/tvTemperature"
+            app:layout_constraintTop_toBottomOf="@+id/tvTemperature"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Feels like 20.4°C"/>
+
+    <TextView
+            android:id="@+id/tvWind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/Title2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.028"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.66"
+            tools:text="Wind: SE, 5.3 m/s"/>
+
+    <TextView
+            android:id="@+id/tvPrecipitation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/Title2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWind"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Precipitation: 5 mm"/>
+
+    <TextView
+            android:id="@+id/tvVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAppearance="@style/Title2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrecipitation"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Visibility: 20 km"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,15 +2,21 @@ package com.android.weathertestapp.data.network.model
 
 import android.os.Parcelable
 import com.android.weathertestapp.data.db.entity.CurrentWeatherEntity
+import com.android.weathertestapp.utils.formatEpochToDateString
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 fun WeatherResponseModel.toCurrentWeatherEntity() = CurrentWeatherEntity(
     city = location.name,
-    updatedTime = current.lastUpdated,
+    updatedTime = current.lastUpdatedEpoch.formatEpochToDateString("E h:mm a"),
     weather = current.condition.text,
     wind = "${current.windKph} km/h",
-    temperature = "${current.tempC}°C"
+    temperature = "${current.tempC}°C",
+    feelsLikeTemperature = "${current.feelsLikeC}°C",
+    conditionImageUrl = current.condition.icon,
+    visibility = "${current.visKm} km",
+    conditionCode = current.condition.code,
+    precipitation = "${current.precipMm} mm"
 )
 
 @Parcelize
@@ -33,7 +39,7 @@ data class Location(
 
 @Parcelize
 data class Current(
-    @SerializedName("last_updated_epoch") val lastUpdatedEpoch: Int,
+    @SerializedName("last_updated_epoch") val lastUpdatedEpoch: Long,
     @SerializedName("last_updated") val lastUpdated: String,
     @SerializedName("temp_c") val tempC: Double,
     @SerializedName("temp_f") val tempF: Double,
