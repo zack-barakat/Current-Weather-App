@@ -5,6 +5,7 @@ import android.content.Context
 import com.android.weathertestapp.App
 import com.android.weathertestapp.data.IAppErrorHelper
 import com.android.weathertestapp.data.IDataManager
+import com.android.weathertestapp.data.repositories.IWeatherRepository
 import com.android.weathertestapp.di.module.ApiModule
 import com.android.weathertestapp.di.module.ApplicationModule
 import com.android.weathertestapp.di.module.DataManagerModule
@@ -20,6 +21,8 @@ interface ApplicationComponent {
     val dataManager: IDataManager
 
     val errorHelper: IAppErrorHelper
+
+    val weatherRepository: IWeatherRepository
 
     fun inject(app: App)
 

@@ -3,8 +3,8 @@ package com.android.weathertestapp.data
 import android.content.Context
 import androidx.annotation.NonNull
 import com.android.weathertestapp.R
-import com.android.weathertestapp.data.model.CommonResponseModel
 import com.android.weathertestapp.data.network.RetrofitException
+import com.android.weathertestapp.data.network.model.CommonResponseModel
 import com.android.weathertestapp.di.qualifiers.ApplicationContext
 import com.android.weathertestapp.di.scopes.ApplicationScope
 import javax.inject.Inject

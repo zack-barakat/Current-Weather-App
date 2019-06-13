@@ -5,6 +5,8 @@ import com.android.weathertestapp.data.AppErrorHelper
 import com.android.weathertestapp.data.DataManager
 import com.android.weathertestapp.data.IAppErrorHelper
 import com.android.weathertestapp.data.IDataManager
+import com.android.weathertestapp.data.repositories.IWeatherRepository
+import com.android.weathertestapp.data.repositories.WeatherRepository
 import com.android.weathertestapp.di.scopes.ApplicationScope
 import dagger.Module
 import dagger.Provides
@@ -26,5 +28,11 @@ class DataManagerModule {
     @ApplicationScope
     fun provideErrorHelper(errorHelper: AppErrorHelper): IAppErrorHelper {
         return errorHelper
+    }
+
+    @Provides
+    @ApplicationScope
+    fun provideWeatherRepository(weatherRepository: WeatherRepository): IWeatherRepository {
+        return weatherRepository
     }
 }

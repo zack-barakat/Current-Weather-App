@@ -4,10 +4,12 @@ import android.content.Context;
 import com.android.weathertestapp.data.ErrorAction;
 import com.android.weathertestapp.data.IAppErrorHelper;
 import com.android.weathertestapp.data.IDataManager;
+import com.android.weathertestapp.data.repositories.IWeatherRepository;
 import com.android.weathertestapp.di.qualifiers.ApplicationContext;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.ref.WeakReference;
 
@@ -17,6 +19,7 @@ public abstract class BaseMvpPresenter<V extends BaseView> implements BasePresen
     protected final Context mAppContext;
     protected IDataManager mDataManager;
     protected IAppErrorHelper mAppErrorHelper;
+    protected IWeatherRepository weatherRepository;
     protected CompositeDisposable disposableSubscription = new CompositeDisposable();
     WeakReference<V> mViewWeak;
 
@@ -25,12 +28,13 @@ public abstract class BaseMvpPresenter<V extends BaseView> implements BasePresen
 
     public BaseMvpPresenter(IDataManager dataManager) {
         mDataManager = dataManager;
-        this.mAppContext = mDataManager.getApplicationContext();
-        this.mAppErrorHelper = mDataManager.getAppErrorHelper();
+        mAppContext = mDataManager.getApplicationContext();
+        mAppErrorHelper = mDataManager.getAppErrorHelper();
+        weatherRepository = mDataManager.getWeatherRepository();
     }
 
     @Override
-    public void onAttachView(V view) {
+    public void onAttachView(@NotNull V view) {
         mViewWeak = new WeakReference<>(view);
         if (isFirstTime) {
             onFirstViewAttach();

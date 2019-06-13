@@ -44,6 +44,7 @@ android {
 dependencies {
     def dagger_version = '2.11'
     def anko_version = '0.10.4'
+    def room_version = '2.1.0-rc01'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -70,7 +71,10 @@ dependencies {
     kapt 'com.github.hotchemi:permissionsdispatcher-processor:3.2.0'
     //kotlin
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
-
+    // room local db
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     // test tools
     testImplementation 'junit:junit:4.12'

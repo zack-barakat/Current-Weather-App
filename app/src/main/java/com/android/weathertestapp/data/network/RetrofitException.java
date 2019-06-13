@@ -2,7 +2,7 @@ package com.android.weathertestapp.data.network;
 
 
 import androidx.annotation.NonNull;
-import com.android.weathertestapp.data.model.CommonResponseModel;
+import com.android.weathertestapp.data.network.model.CommonResponseModel;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 import retrofit2.Response;
